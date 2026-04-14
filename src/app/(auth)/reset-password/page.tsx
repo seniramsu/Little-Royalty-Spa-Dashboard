@@ -23,9 +23,11 @@ export default function ResetPasswordPage() {
     })
 
     if (error) {
-      // Log for debugging but show a generic message to avoid leaking
-      // whether the email address is registered.
-      console.error('Password reset error:', error.message)
+      // Do not log error details in production — even to the console — to avoid
+      // leaking whether the email address is registered (enumeration defense).
+      if (process.env.NODE_ENV !== 'production') {
+        console.error('Password reset error:', error.message)
+      }
     }
 
     // Always show the same confirmation message — do not reveal whether
