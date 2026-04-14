@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { toast } from 'sonner'
@@ -18,6 +18,8 @@ export default function UpdatePasswordPage() {
   // Recovery session is established when Supabase fires PASSWORD_RECOVERY event
   const [recoveryReady, setRecoveryReady] = useState(false)
   const [invalidLink, setInvalidLink] = useState(false)
+  // Ref so the setTimeout callback always reads the latest value (avoids stale closure)
+  const recoveryReadyRef = useRef(false)
 
   useEffect(() => {
     const supabase = createClient()
@@ -27,15 +29,16 @@ export default function UpdatePasswordPage() {
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       (event) => {
         if (event === 'PASSWORD_RECOVERY') {
+          recoveryReadyRef.current = true
           setRecoveryReady(true)
         }
       }
     )
 
     // Set a timeout — if no PASSWORD_RECOVERY fires within 5s, the link is
-    // likely invalid or already used.
+    // likely invalid or already used. Read from ref to avoid stale closure.
     const timeout = setTimeout(() => {
-      if (!recoveryReady) {
+      if (!recoveryReadyRef.current) {
         setInvalidLink(true)
       }
     }, 5000)
@@ -44,7 +47,6 @@ export default function UpdatePasswordPage() {
       subscription.unsubscribe()
       clearTimeout(timeout)
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -72,6 +74,7 @@ export default function UpdatePasswordPage() {
     }
 
     toast.success('Password updated — please sign in with your new password')
+    await supabase.auth.signOut()
     router.push('/login')
   }
 
