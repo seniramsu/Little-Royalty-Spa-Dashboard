@@ -83,34 +83,34 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| AUTH-01 | — | Pending |
-| AUTH-02 | — | Pending |
-| AUTH-03 | — | Pending |
-| DASH-01 | — | Pending |
-| DASH-02 | — | Pending |
-| DASH-03 | — | Pending |
-| BOOK-01 | — | Pending |
-| BOOK-02 | — | Pending |
-| BOOK-03 | — | Pending |
-| CUST-01 | — | Pending |
-| CUST-02 | — | Pending |
-| CUST-03 | — | Pending |
-| CUST-04 | — | Pending |
-| REV-01 | — | Pending |
-| REV-02 | — | Pending |
-| REV-03 | — | Pending |
-| SOCL-01 | — | Pending |
-| SOCL-02 | — | Pending |
-| SOCL-03 | — | Pending |
-| SOCL-04 | — | Pending |
-| DEMO-01 | — | Pending |
-| DEMO-02 | — | Pending |
-| DEMO-03 | — | Pending |
+| AUTH-01 | 1 — Scaffold + Auth | Pending |
+| AUTH-02 | 1 — Scaffold + Auth | Pending |
+| AUTH-03 | 1 — Scaffold + Auth | Pending |
+| DASH-01 | 1 — Scaffold + Auth | Pending |
+| DASH-02 | 1 — Scaffold + Auth | Pending |
+| DASH-03 | 1 — Scaffold + Auth | Pending |
+| BOOK-01 | 2 — Bookings + CRM + Revenue | Pending |
+| BOOK-02 | 2 — Bookings + CRM + Revenue | Pending |
+| BOOK-03 | 2 — Bookings + CRM + Revenue | Pending |
+| CUST-01 | 2 — Bookings + CRM + Revenue | Pending |
+| CUST-02 | 2 — Bookings + CRM + Revenue | Pending |
+| CUST-03 | 2 — Bookings + CRM + Revenue | Pending |
+| CUST-04 | 2 — Bookings + CRM + Revenue | Pending |
+| REV-01 | 2 — Bookings + CRM + Revenue | Pending |
+| REV-02 | 2 — Bookings + CRM + Revenue | Pending |
+| REV-03 | 2 — Bookings + CRM + Revenue | Pending |
+| SOCL-01 | 3 — Social Planner + AI Content | Pending |
+| SOCL-02 | 3 — Social Planner + AI Content | Pending |
+| SOCL-03 | 3 — Social Planner + AI Content | Pending |
+| SOCL-04 | 3 — Social Planner + AI Content | Pending |
+| DEMO-01 | 4 — Demographics Feed | Pending |
+| DEMO-02 | 4 — Demographics Feed | Pending |
+| DEMO-03 | 4 — Demographics Feed | Pending |
 
 **Coverage:**
 - v1 requirements: 23 total
-- Mapped to phases: 0 (roadmap not yet created)
-- Unmapped: 23 ⚠️
+- Mapped to phases: 23 ✓
+- Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-04-13*
